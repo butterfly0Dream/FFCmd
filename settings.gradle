@@ -1,0 +1,3 @@
+include ':libffmpegcmd'
+include ':app'
+rootProject.name = "FFCmd"
