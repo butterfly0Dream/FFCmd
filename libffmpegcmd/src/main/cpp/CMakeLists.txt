@@ -9,7 +9,7 @@ add_library(
 SET_TARGET_PROPERTIES(
         libavcodec
         PROPERTIES IMPORTED_LOCATION
-        ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libavcodec.so
+        ${PROJECT_SOURCE_DIR}/ffmpeg/prebuilt/${ANDROID_ABI}/libavcodec.so
 )
 
 #add_library(
@@ -32,7 +32,7 @@ add_library(libavfilter
 SET_TARGET_PROPERTIES(
         libavfilter
         PROPERTIES IMPORTED_LOCATION
-        ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libavfilter.so
+        ${PROJECT_SOURCE_DIR}/ffmpeg/prebuilt/${ANDROID_ABI}/libavfilter.so
 )
 
 
@@ -44,7 +44,7 @@ add_library(libavformat
 SET_TARGET_PROPERTIES(
         libavformat
         PROPERTIES IMPORTED_LOCATION
-        ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libavformat.so
+        ${PROJECT_SOURCE_DIR}/ffmpeg/prebuilt/${ANDROID_ABI}/libavformat.so
 )
 
 
@@ -57,7 +57,7 @@ add_library(
 SET_TARGET_PROPERTIES(
         libavutil
         PROPERTIES IMPORTED_LOCATION
-        ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libavutil.so
+        ${PROJECT_SOURCE_DIR}/ffmpeg/prebuilt/${ANDROID_ABI}/libavutil.so
 )
 
 
@@ -82,7 +82,7 @@ add_library(
 SET_TARGET_PROPERTIES(
         libswresample
         PROPERTIES IMPORTED_LOCATION
-        ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libswresample.so
+        ${PROJECT_SOURCE_DIR}/ffmpeg/prebuilt/${ANDROID_ABI}/libswresample.so
 )
 
 
@@ -95,7 +95,7 @@ add_library(
 SET_TARGET_PROPERTIES(
         libswscale
         PROPERTIES IMPORTED_LOCATION
-        ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libswscale.so
+        ${PROJECT_SOURCE_DIR}/ffmpeg/prebuilt/${ANDROID_ABI}/libswscale.so
 )
 
 

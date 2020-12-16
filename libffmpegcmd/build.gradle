@@ -1,6 +1,4 @@
-plugins {
-    id 'com.android.library'
-}
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 29
@@ -42,9 +40,10 @@ android {
         }
     }
 
-    packagingOptions {
-        pickFirst 'lib/arm64-v8a/*.so'
-    }
+    //配置NDK路径
+//    sourceSets {
+//        main.jniLibs.srcDirs = ['src/main/jniLibs']
+//    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

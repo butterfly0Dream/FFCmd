@@ -8,8 +8,9 @@
 #include <jni.h>
 #include <android/log.h>
 
-#define logDebug(...) __android_log_print(ANDROID_LOG_DEBUG,"MainActivity",__VA_ARGS__)
-#define logError(...) __android_log_print(ANDROID_LOG_ERROR,"MainActivity",__VA_ARGS__)
+#define logDebug(...) __android_log_print(ANDROID_LOG_DEBUG,"FFMpegCmd",__VA_ARGS__)
+#define logWarn(...) __android_log_print(ANDROID_LOG_WARN,"FFMpegCmd",__VA_ARGS__)
+#define logError(...) __android_log_print(ANDROID_LOG_ERROR,"FFMpegCmd",__VA_ARGS__)
 
 //java 对象 回调给 jni 层的接口
 
@@ -54,10 +55,12 @@ void log_callback_cpp(void *ptr, int level, const char *fmt, va_list vl) {
     av_log_format_line(ptr, level, fmt, vl, line, sizeof(line), &print_prefix);
     strcpy(prev, line);
 
-    if (level <= AV_LOG_WARNING) {
+    if (level <= AV_LOG_ERROR) {
         logError("FF-EOR：%s", line);
-    } else {
-        logDebug("FF-LOG：%s", line);
+    } else if(level <= AV_LOG_WARNING) {
+        logWarn("FF-LOG：%s", line);
+    } else{
+//        logDebug("FF-LOG：%s", line);
     }
 
     //处理日志
